@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Note App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Quick Note Application</h1>
+
+<form id="noteForm">
+    <textarea id="content" placeholder="Write your note"></textarea>
+    <br><br>
+    <button type="submit">Save Note</button>
+</form>
+
+<h2>Saved Notes</h2>
+
+<ul>
+{% for note in notes %}
+    <li>{{ note[1] }}</li>
+{% endfor %}
+</ul>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
